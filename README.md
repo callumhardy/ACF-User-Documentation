@@ -40,9 +40,11 @@ Secondly there is the User Documentation page. All published User Documentation 
 
 ## Displaying the User Documentation Post Type Page page only for select users
 
-Since the creation of user documentation posts are not really any use for a client. It would be a good idea to only allow them to view the User Documentation Page, which displays all the documentation posts whilst hiding the User Documentation post type page from them.
+Since the creation of user documentation posts is not really of any use to a client. It would be a good idea to only allow them to view the User Documentation Page, which displays all the documentation posts.
 
-Here we are setting the plugin to only display the User Documentation post type page for a user with an id or '12' or a user name of 'ed_user'.
+Below we are telling the plugin to only display the User Documentation post type page for a user with an id or '12' or a user name of 'ed_user'.
+
+Effectively users in this array will both be able to create and view the User Documentation. Whilst users not in this array will only be able to view User Documentation not create or edit it.
 
 	add_filter( 'acf_user_documentation_args',function( $args ){
 		
@@ -58,5 +60,5 @@ Here we are setting the plugin to only display the User Documentation post type 
 
 There are two dependent plugins.
 
-- [Advanced Custom Fielld](http://wordpress.org/plugins/advanced-custom-fields/)
+- [Advanced Custom Fields](http://wordpress.org/plugins/advanced-custom-fields/)
 - [ACF Options Page](http://www.advancedcustomfields.com/add-ons/options-page/)
