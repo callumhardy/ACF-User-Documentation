@@ -3,7 +3,7 @@
 Class ACF_User_Documentation {
 
 	var $default_args = array(
-		'allowed_users' => array(1,'admin')
+		'allowed_users' => array(1)
 	);
 
 	var $path_to_dir;
@@ -89,7 +89,7 @@ Class ACF_User_Documentation {
 		if( !in_array( $user->ID, $this->default_args['allowed_users'] ) && !in_array( $user_data->user_login, $this->default_args['allowed_users'] ) ): ?>
 
 		<style>
-			#menu-posts-user-doc{
+			#menu-posts-documentation-post{
 				display: none;
 			}
 		</style>
@@ -106,9 +106,9 @@ Class ACF_User_Documentation {
 	 */
 	function register_doc_post_type(){
 
-		$post_name_singular = 'User Doc';
-		$post_name_slug 	= 'user-doc';
-		$post_name_plural 	= 'User Docs';
+		$post_name_singular = 'Documentation Post';
+		$post_name_slug 	= 'documentation-post';
+		$post_name_plural 	= 'Documentation Posts';
 
 		$labels = array(
 			'name'                => _x( $post_name_singular, 'Post Type General Name', 'text_domain' ),
@@ -163,41 +163,64 @@ Class ACF_User_Documentation {
 		global $post;
 
 		$args = array(
-			'post_type' => array( 'user-doc' ),
+			'post_type' => array( 'documentation-post' ),
 			'post_status' => 'publish'
 		);
 
 		$WP_query = null;
 		$WP_query = new WP_Query($args);
 
+		if( $WP_query->have_posts() ) {
+
 		//	Print the Nav menu for the Documentation
 		echo "<ul id=\"doc-links\">";
 
 			echo "<li><h3><a href=\"#doc-links\">Contents:</a></h3></li>";
 
-		if( $WP_query->have_posts() ) while ($WP_query->have_posts()) : $WP_query->the_post();
+			while ($WP_query->have_posts()) : $WP_query->the_post();
 
-			echo "<li><a href=\"#{$post->post_name}\">".get_the_title()."</a></li>";
+				echo "<li><a href=\"#{$post->post_name}\">".get_the_title()."</a></li>";
 
-		endwhile;
-
+			endwhile;
+		
 		echo "</ul>";
+
+		}
 
 		//	Rewind the loop
 		rewind_posts();
 
 		//	Begin the Documentation loop
-		if( $WP_query->have_posts() ) while ( $WP_query->have_posts() ) : $WP_query->the_post();
+		if( $WP_query->have_posts() ) {
+
+
+			while ( $WP_query->have_posts() ) : $WP_query->the_post();
+
+				echo "<div id=\"{$post->post_name}\" class=\"doc-content\">";
+
+					echo "<h2>".get_the_title()."</h2>";
+
+					the_content();
+
+				echo "</div>";
+
+			endwhile;
+
+		} else {
 
 			echo "<div id=\"{$post->post_name}\" class=\"doc-content\">";
 
-				echo "<h2>".get_the_title()."</h2>";
+				echo "<p>There is currenlty no User Documentation posts</p>";
 
-				the_content();
+				$user = wp_get_current_user();
+				$user_data = $user->data;
+
+				if( in_array( $user->ID, $this->default_args['allowed_users'] ) || in_array( $user_data->user_login, $this->default_args['allowed_users'] ) )
+					echo "<p><a href=\"".admin_url( 'post-new.php?post_type=documentation-post' )."\">Click here to add some</a></p>";
 
 			echo "</div>";
 
-		endwhile;
+		}
 
 	}
 
