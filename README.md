@@ -38,7 +38,7 @@ Secondly there is the User Documentation page. All published User Documentation 
 
 # Examples
 
-## Displaying the User Documentation Post Type Page page only for select users
+## Displaying the User Documentation post type page only for select users
 
 Since the creation of user documentation posts is not really of any use to a client. It would be a good idea to only allow them to view the User Documentation Page, which displays all the documentation posts.
 
