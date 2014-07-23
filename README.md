@@ -1,5 +1,5 @@
 
-# ACF User Documentation
+# User Documentation
 
 This plugin creates two sections in the back end where you can create and display user documentation posts to help make using the site easier for a client with a customised interface.
 
@@ -17,19 +17,19 @@ Secondly there is the User Documentation page. All published User Documentation 
 
 ## Filters
 
-### acf_user_documentation_args
+### user_documentation_args
 
 	function filter_function_name( $args ) {
 	  // Do user manipulation here
 	  return $args;
 	}
-	add_filter( 'acf_user_documentation_args', 'filter_function_name', 10, 2 );
+	add_filter( 'user_documentation_args', 'filter_function_name', 10, 2 );
 
 **$args**
 
 > (*array*) The current config arguments for the plugin
 
-#### acf_user_documentation_args Parameters
+#### user_documentation_args Parameters
 
 **$allowed_users**
 
@@ -46,7 +46,7 @@ Below we are telling the plugin to only display the User Documentation post type
 
 Effectively users in this array will both be able to create and view the User Documentation. Whilst users not in this array will only be able to view User Documentation not create or edit it.
 
-	add_filter( 'acf_user_documentation_args',function( $args ){
+	add_filter( 'user_documentation_args',function( $args ){
 		
 		$args = array(
 			'allowed_users' => array( 12, 'ed_user' )
@@ -55,10 +55,3 @@ Effectively users in this array will both be able to create and view the User Do
 		return $args;
 
 	});
-
-# Dependencies
-
-This plugin is dependent on the following.
-
-- [Advanced Custom Fields](http://wordpress.org/plugins/advanced-custom-fields/)
-- [ACF Options Page](http://www.advancedcustomfields.com/add-ons/options-page/)

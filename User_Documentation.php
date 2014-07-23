@@ -1,6 +1,6 @@
 <?php
 
-Class ACF_User_Documentation {
+Class User_Documentation {
 
 	var $default_args = array(
 		'allowed_users' => array(1)
@@ -47,13 +47,13 @@ Class ACF_User_Documentation {
 
 		function enqueue_admin_scripts() {
 
-			//	acf-user-documentation js
-			wp_register_script( 'acf-user-documentation-js', $this->path_to_dir . '/assets/js/acf-user-documentation.js', array( 'jquery' ) );
-			wp_enqueue_script( 'acf-user-documentation-js' );
+			//	user-documentation js
+			wp_register_script( 'user-documentation-js', $this->path_to_dir . '/assets/js/user-documentation.js', array( 'jquery' ) );
+			wp_enqueue_script( 'user-documentation-js' );
 
-			//	acf-user-documentation css
-			wp_register_style( 'acf-user-documentations-css', $this->path_to_dir . '/assets/css/acf-user-documentation.css', '', '', 'screen' );
-	        wp_enqueue_style( 'acf-user-documentations-css' );
+			//	user-documentation css
+			wp_register_style( 'user-documentations-css', $this->path_to_dir . '/assets/css/user-documentation.css', '', '', 'screen' );
+	        wp_enqueue_style( 'user-documentations-css' );
 
 		}
 
@@ -226,7 +226,7 @@ Class ACF_User_Documentation {
 
 }
 
-$user_docs = new ACF_User_Documentation;
+$user_docs = new User_Documentation;
 
 $user_docs->init();
 
