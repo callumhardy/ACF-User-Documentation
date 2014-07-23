@@ -203,7 +203,7 @@ Class ACF_User_Documentation {
 
 }
 
-$user_docs= new ACF_User_Documentation;
+$user_docs = new ACF_User_Documentation;
 
 $user_docs->init();
 

@@ -58,7 +58,7 @@ Effectively users in this array will both be able to create and view the User Do
 
 # Dependencies
 
-There are two dependent plugins.
+This plugin is dependent on the following.
 
 - [Advanced Custom Fields](http://wordpress.org/plugins/advanced-custom-fields/)
 - [ACF Options Page](http://www.advancedcustomfields.com/add-ons/options-page/)
