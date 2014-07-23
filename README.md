@@ -5,7 +5,7 @@ This plugin creates two sections in the back end where you can create and displa
 
 # Usage
 
-The plugin can be uploaded and activated as a Wordpress plugin or the file `ACF_User_Documentation.php` can be included directly in the theme's function file.
+The plugin can be uploaded and activated as a Wordpress plugin or the file `User_Documentation.php` can be included directly in the theme's function file.
 
 ## Wordpress back end
 
