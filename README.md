@@ -1,5 +1,5 @@
 
-# ACF Instructions Helper
+# ACF User Documentation
 
 This plugin creates two sections in the back end where you can create and display user documentation posts to help make using the site easier for a client with a customised interface.
 
@@ -40,7 +40,7 @@ Secondly there is the User Documentation page. All published User Documentation 
 
 ## Displaying the User Documentation Post Type Page page only for select users
 
-Since the creation of user documentation posts are not really any use for a client. It would be a good idea to only allow them to view the User Doumentation Page, which displays all the documentation posts whilst hiding the User Documentation post type page from them.
+Since the creation of user documentation posts are not really any use for a client. It would be a good idea to only allow them to view the User Documentation Page, which displays all the documentation posts whilst hiding the User Documentation post type page from them.
 
 Here we are setting the plugin to only display the User Documentation post type page for a user with an id or '12' or a user name of 'ed_user'.
 
@@ -58,5 +58,5 @@ Here we are setting the plugin to only display the User Documentation post type 
 
 There are two dependent plugins.
 
-- (Advanced Custom Fields)[http://wordpress.org/plugins/advanced-custom-fields/]
-- (ACF Options Page)[http://www.advancedcustomfields.com/add-ons/options-page/]
+- [Advanced Custom Fielld](http://wordpress.org/plugins/advanced-custom-fields/)
+- [ACF Options Page](http://www.advancedcustomfields.com/add-ons/options-page/)
