@@ -1,0 +1,42 @@
+
+.doc-content{
+	width: 800px;
+	padding: 20px;
+	margin-top: 20px;
+	border-bottom: 5px solid #dedede;
+	background-color: #fdfdfd;
+}
+
+.doc-content h2{
+	padding-bottom: 20px;
+}
+
+.doc-content p,
+.doc-content li,
+.doc-content a,
+.doc-content span{
+	font-size: 16px;
+}
+
+.doc-content img{
+	max-width: 100%;
+	height: auto;
+}
+
+#doc-links{
+	background-color: white;
+	border-bottom: 5px solid #eaeaea;
+	display: inline-block;
+	padding: 10px 20px 20px;
+	position: fixed;
+	right: 20px;
+	top: 50px;
+}
+
+#doc-links li{
+	
+}
+
+#doc-links li a{
+	display: block;
+}
